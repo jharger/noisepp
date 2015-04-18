@@ -1,0 +1,79 @@
+cmake_minimum_required(VERSION 3.2)
+ 
+project(noisepp)
+
+include_directories(
+    utils/
+    core/
+    threadpp/
+)
+
+add_library(noisepp STATIC
+    utils/NoiseBuilders.cpp
+    utils/NoiseColourValue.cpp
+    utils/NoiseEndianUtils.cpp
+    utils/NoiseGradientRenderer.cpp
+    utils/NoiseImage.cpp
+    utils/NoiseInStream.cpp
+    utils/NoiseJobQueue.cpp
+    utils/NoiseModules.cpp
+    utils/NoiseOutStream.cpp
+    utils/NoiseReader.cpp
+    utils/NoiseSystem.cpp
+    utils/NoiseWriter.cpp
+    core/Noise.h
+    core/NoiseAbsolute.h
+    core/NoiseAddition.h
+    core/NoiseBillow.h
+    core/NoiseBlend.h
+    core/NoiseCheckerboard.h
+    core/NoiseClamp.h
+    core/NoiseConfig.h
+    core/NoiseConstant.h
+    core/NoiseCurve.h
+    core/NoiseExceptions.h
+    core/NoiseExponent.h
+    core/NoiseGenerator.h
+    core/NoiseInvert.h
+    core/NoiseMath.h
+    core/NoiseMaximum.h
+    core/NoiseMinimum.h
+    core/NoiseModule.h
+    core/NoiseMultiply.h
+    core/NoisePerlin.h
+    core/NoisePipeline.h
+    core/NoisePipelineJobs.h
+    core/NoisePlatform.h
+    core/NoisePower.h
+    core/NoisePrerequisites.h
+    core/NoiseRidgedMulti.h
+    core/NoiseScaleBias.h
+    core/NoiseScalePoint.h
+    core/NoiseSelect.h
+    core/NoiseStdHeaders.h
+    core/NoiseTerrace.h
+    core/NoiseThreadedPipeline.h
+    core/NoiseTranslatePoint.h
+    core/NoiseTurbulence.h
+    core/NoiseVectorTable.h
+    core/NoiseVoronoi.h
+    threadpp/Thread.h
+    threadpp/ThreadCondition.h
+    threadpp/ThreadImplementation.h
+    threadpp/ThreadMutex.h
+    threadpp/ThreadPlatform.h
+    threadpp/ThreadPrerequisites.h
+    threadpp/ThreadStdHeaders.h
+    utils/NoiseBuilders.h
+    utils/NoiseColourValue.h
+    utils/NoiseEndianUtils.h
+    utils/NoiseGradientRenderer.h
+    utils/NoiseImage.h
+    utils/NoiseInStream.h
+    utils/NoiseJobQueue.h
+    utils/NoiseOutStream.h
+    utils/NoiseReader.h
+    utils/NoiseSystem.h
+    utils/NoiseUtils.h
+    utils/NoiseWriter.h
+)
