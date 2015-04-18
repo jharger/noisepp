@@ -24,7 +24,7 @@
 //
 
 #ifndef NOISEPP_H
-#define NOISEPP_h
+#define NOISEPP_H
 
 #include "NoiseStdHeaders.h"
 #include "NoiseExceptions.h"
