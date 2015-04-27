@@ -78,7 +78,7 @@ namespace noisepp
 				Real value;
 				if (mEnableDistance)
 				{
-					const Real SQRT_TWO = 1.4142135623730951;
+					const Real SQRT_TWO = 1.4142135623730951f;
 					Real xDist = xmin - x;
 					Real yDist = ymin - y;
 					value = (std::sqrt(xDist * xDist + yDist * yDist)) * SQRT_TWO - Real(1.0);
@@ -146,7 +146,7 @@ namespace noisepp
 				Real value;
 				if (mEnableDistance)
 				{
-					const Real SQRT_THREE = 1.7320508075688772;
+					const Real SQRT_THREE = 1.7320508075688772f;
 					Real xDist = xmin - x;
 					Real yDist = ymin - y;
 					Real zDist = zmin - z;

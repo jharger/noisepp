@@ -50,13 +50,13 @@ void PerlinModuleBase::write (utils::OutStream &s) const
 
 void PerlinModuleBase::read (utils::InStream &s)
 {
-	mFrequency = s.readDouble ();
+	mFrequency = static_cast<Real>(s.readDouble ());
 	mOctaveCount = s.readInt ();
 	mSeed = s.readInt ();
 	mQuality = s.readInt ();
-	mLacunarity = s.readDouble ();
-	mPersistence = s.readDouble ();
-	mScale = s.readDouble ();
+    mLacunarity = static_cast<Real>(s.readDouble ());
+    mPersistence = static_cast<Real>(s.readDouble ());
+    mScale = static_cast<Real>(s.readDouble ());
 }
 
 void ClampModule::write (utils::OutStream &s) const
@@ -67,8 +67,8 @@ void ClampModule::write (utils::OutStream &s) const
 
 void ClampModule::read (utils::InStream &s)
 {
-	mLowerBound = s.readDouble ();
-	mUpperBound = s.readDouble ();
+    mLowerBound = static_cast<Real>(s.readDouble ());
+    mUpperBound = static_cast<Real>(s.readDouble ());
 }
 
 void ConstantModule::write (utils::OutStream &s) const
@@ -78,7 +78,7 @@ void ConstantModule::write (utils::OutStream &s) const
 
 void ConstantModule::read (utils::InStream &s)
 {
-	mValue = s.readDouble ();
+    mValue = static_cast<Real>(s.readDouble ());
 }
 
 void CurveModule::write (utils::OutStream &s) const
@@ -98,9 +98,9 @@ void CurveModule::read (utils::InStream &s)
 	int count = s.readInt ();
 	for (int i=0;i<count;++i)
 	{
-		double inValue = s.readDouble ();
-		double outValue = s.readDouble ();
-		addControlPoint (inValue, outValue);
+		double inValue = static_cast<Real>(s.readDouble ());
+		double outValue = static_cast<Real>(s.readDouble ());
+        addControlPoint (static_cast<Real>(inValue), static_cast<Real>(outValue));
 	}
 }
 
@@ -111,7 +111,7 @@ void ExponentModule::write (utils::OutStream &s) const
 
 void ExponentModule::read (utils::InStream &s)
 {
-	mExponent = s.readDouble ();
+    mExponent = static_cast<Real>(s.readDouble ());
 }
 
 void RidgedMultiModule::write (utils::OutStream &s) const
@@ -129,15 +129,15 @@ void RidgedMultiModule::write (utils::OutStream &s) const
 
 void RidgedMultiModule::read (utils::InStream &s)
 {
-	mFrequency = s.readDouble ();
+	mFrequency = static_cast<Real>(s.readDouble ());
 	mOctaveCount = s.readInt ();
 	mSeed = s.readInt ();
 	mQuality = s.readInt ();
-	mLacunarity = s.readDouble ();
-	mExponent = s.readDouble ();
-	mOffset = s.readDouble ();
-	mGain = s.readDouble ();
-	mScale = s.readDouble ();
+    mLacunarity = static_cast<Real>(s.readDouble ());
+    mExponent = static_cast<Real>(s.readDouble ());
+    mOffset = static_cast<Real>(s.readDouble ());
+    mGain = static_cast<Real>(s.readDouble ());
+    mScale = static_cast<Real>(s.readDouble ());
 }
 
 void ScaleBiasModule::write (utils::OutStream &s) const
@@ -148,8 +148,8 @@ void ScaleBiasModule::write (utils::OutStream &s) const
 
 void ScaleBiasModule::read (utils::InStream &s)
 {
-	mScale = s.readDouble ();
-	mBias = s.readDouble ();
+	mScale = static_cast<Real>(s.readDouble ());
+	mBias = static_cast<Real>(s.readDouble ());
 }
 
 void ScalePointModule::write (utils::OutStream &s) const
@@ -161,9 +161,9 @@ void ScalePointModule::write (utils::OutStream &s) const
 
 void ScalePointModule::read (utils::InStream &s)
 {
-	mScaleX = s.readDouble ();
-	mScaleY = s.readDouble ();
-	mScaleZ = s.readDouble ();
+	mScaleX = static_cast<Real>(s.readDouble ());
+	mScaleY = static_cast<Real>(s.readDouble ());
+	mScaleZ = static_cast<Real>(s.readDouble ());
 }
 
 void SelectModule::write (utils::OutStream &s) const
@@ -175,9 +175,9 @@ void SelectModule::write (utils::OutStream &s) const
 
 void SelectModule::read (utils::InStream &s)
 {
-	mLowerBound = s.readDouble ();
-	mUpperBound = s.readDouble ();
-	mEdgeFalloff = s.readDouble ();
+	mLowerBound = static_cast<Real>(s.readDouble ());
+	mUpperBound = static_cast<Real>(s.readDouble ());
+	mEdgeFalloff = static_cast<Real>(s.readDouble ());
 }
 
 void TerraceModule::write (utils::OutStream &s) const
@@ -198,7 +198,7 @@ void TerraceModule::read (utils::InStream &s)
 	int count = s.readInt ();
 	for (int i=0;i<count;++i)
 	{
-		addControlPoint (s.readDouble());
+        addControlPoint (static_cast<Real>(s.readDouble ()));
 	}
 }
 
@@ -211,9 +211,9 @@ void TranslatePointModule::write (utils::OutStream &s) const
 
 void TranslatePointModule::read (utils::InStream &s)
 {
-	mTranslationX = s.readDouble ();
-	mTranslationY = s.readDouble ();
-	mTranslationZ = s.readDouble ();
+	mTranslationX = static_cast<Real>(s.readDouble ());
+	mTranslationY = static_cast<Real>(s.readDouble ());
+	mTranslationZ = static_cast<Real>(s.readDouble ());
 }
 
 void TurbulenceModule::write (utils::OutStream &s) const
@@ -227,10 +227,10 @@ void TurbulenceModule::write (utils::OutStream &s) const
 
 void TurbulenceModule::read (utils::InStream &s)
 {
-	mPower = s.readDouble ();
+	mPower = static_cast<Real>(s.readDouble ());
 	setRoughness (s.readInt());
 	setSeed (s.readInt());
-	setFrequency (s.readDouble());
+    setFrequency (static_cast<Real>(s.readDouble ()));
 	setQuality (s.readInt());
 }
 
@@ -244,9 +244,9 @@ void VoronoiModule::write (utils::OutStream &s) const
 
 void VoronoiModule::read (utils::InStream &s)
 {
-	mFrequency = s.readDouble();
+    mFrequency = static_cast<Real>(s.readDouble ());
 	mSeed = s.readInt ();
-	mDisplacement = s.readDouble ();
+	mDisplacement = static_cast<Real>(s.readDouble ());
 	mEnableDistance = (s.readInt() != 0);
 }
 

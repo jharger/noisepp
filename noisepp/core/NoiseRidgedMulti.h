@@ -310,7 +310,7 @@ namespace noisepp
 		public:
 			/// Constructor.
 			RidgedMultiModule () :
-			mFrequency(1.0), mOctaveCount(6), mSeed(0), mQuality(NOISE_QUALITY_STD), mLacunarity(2.0), mExponent(1.0), mOffset(1.0), mGain(2.0), mScale(2.12) {}
+			mFrequency(1.0f), mOctaveCount(6), mSeed(0), mQuality(NOISE_QUALITY_STD), mLacunarity(2.0f), mExponent(1.0f), mOffset(1.0f), mGain(2.0f), mScale(2.12f) {}
 
 			/// Sets the frequency.
 			void setFrequency (Real v)
